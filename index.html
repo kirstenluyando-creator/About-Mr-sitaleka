@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Luyando's Official Site</title>
+    <style>
+        /* --- THE PAINT (CSS) --- */
+        body {
+            background-color: #001f3f; /* Deep Navy Blue */
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* The main container for your pages */
+        .card {
+            background-color: white;
+            width: 320px;
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            display: none; /* Hidden by default */
+            animation: slideUp 0.5s ease-out;
+        }
+
+        /* This class shows the page */
+        .active {
+            display: block;
+        }
+
+        /* CSS Logo instead of a picture */
+        .logo-circle {
+            width: 80px;
+            height: 80px;
+            background-color: #0074D9;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+        }
+
+        h1 {
+            color: #001f3f;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .highlight-box {
+            background-color: #f1f7ff;
+            padding: 15px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #0074D9;
+            text-align: left;
+        }
+
+        /* Button Styling */
+        .btn {
+            background-color: #0074D9;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="home" class="card active">
+        <div class="logo-circle">L</div>
+        <h1>Luyando's Site</h1>
+        <p>Powered and made by <strong>Luyando</strong>.</p>
+        <p>Welcome to my official web site! I am a 12-year-old developer building the future of the web.</p>
+        <button class="btn" onclick="goTo('skills')">View My Profile</button>
+    </div>
+
+    <div id="skills" class="card">
+        <h1>My Profile</h1>
+        
+        <div class="highlight-box">
+            <strong>🚀 Tech Skills:</strong>
+            <p style="margin: 5px 0 0 0;">HTML Structure, CSS Styling, and JavaScript Logic.</p>
+        </div>
+
+        <div class="highlight-box">
+            <strong>⚽ Personal:</strong>
+            <p style="margin: 5px 0 0 0;">I play soccer and I'm an intelligent student dedicated to my studies.</p>
+        </div>
+
+        <p>I believe that coding is a very interesting thing to do</p>
+        <button class="btn" onclick="goTo('home')">Back Home</button>
+    </div>
+
+    <script>
+        function goTo(pageId) {
+            // Remove 'active' from all cards
+            var cards = document.getElementsByClassName('card');
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].classList.remove('active');
+            }
+            // Add 'active' to the card we want to see
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
